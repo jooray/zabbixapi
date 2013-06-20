@@ -36,7 +36,11 @@ class ZabbixApi
     def parse_keys(data)
       case data
       when Hash
-        data.empty? ? nil : data[keys][0].to_i
+				if keys.nil?
+					nil
+				else
+          data.empty? ? nil : data[keys][0].to_i
+				end
       when TrueClass
         true
       when FalseClass

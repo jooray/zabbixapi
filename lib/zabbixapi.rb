@@ -80,5 +80,10 @@ class ZabbixApi
     @mediatypes ||= Mediatypes.new(@client)
   end
 
+  def webchecks
+    @webchecks ||= Webchecks.new(@client)
+  end
+
+
 end
 
